@@ -1,2 +1,0 @@
-Twitch live stream recorder - https://github.com/ancalentari/twitch-stream-recorder
-Twitch chat downloader - https://github.com/PetterKraabol/Twitch-Chat-Downloader
