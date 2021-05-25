@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+   <div class="form_page">
+
+    <div class="form_inner">
+
+    <input type='checkbox' id='form-switch'>
+    <form id='login-form' action="" method='post'>
+      {% csrf_token %}
+     <h2 class="form_tittle">highl<span class="span" >Ai</span>ghts</h2>
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="password" placeholder="Password" name="password" required>
+      <button class = "btn_form" type='submit'>Sign in</button>
+      <label for='form-switch'><span>Register</span></label>
+    </form>
+    <form id='register-form' action="" method='post'>
+      <h2 class="form_tittle">highl<span class="span" >Ai</span>ghts</h2>
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Re Password" required>
+      <button class = "btn_form" type='submit'>Register</button>
+        <label for='form-switch'><span>Alredy member?Sign in now</span></label>
+    </form>
+
+    </div>
+    </div>
+
+    </body>
+
+</html>

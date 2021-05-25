@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <title>Video Page</title>
+    </head>
+    <body>
+<div class="page">
+<header class="header">
+    <div class="container">
+
+        <div class="header_elements">
+            <a href='/' style="text-decoration: none;  color: #FFFFFF;"><div class="Logo">highl<span class="span" >Ai</span>ghts</div></a>
+            <div class="header_user">{{ name }}<img class = "user" src="{% static 'images/user.png' %}" alt="">
+            </div>
+    </div>
+
+    </div>
+    </header>
+
+     <main class="main">
+        <div class="container">
+        <div class="top_elements">
+        <div class="heading">{{ stream_name }}</div>
+        <div class="btn"><a href="#" class="stop_btn">Stop generation</a></div>
+        <div class="download"><a class="download_btn" href="/delete_stream/{{ name }}/{{ stream_link }}"><img class="download_img" src="{% static 'images/delete.png' %}"></a></div>
+          </div>
+    </div>
+    </main>
+            <div class="wrapper">
+        <div class="container">
+        <div class="slider_big">
+            {% for clip in clips_data %}
+            <div class="sliderbig_item">
+                <!-- <img src="{% static 'images/video.jpg' %}" width="550px" height="300px"> -->
+                <video width="550px" height="300px" controls preload="metadata">
+                    <source src="{{ clip.clip_link }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </div>
+            {% endfor %}
+            <!-- <div class="sliderbig_item">
+                <img src="{% static 'images/video.jpg' %}" width="550px" height="300px">
+            </div>
+            <div class="sliderbig_item">
+                <img src="{% static 'images/video.jpg' %}" width="550px" height="300px">
+            </div>
+            <div class="sliderbig_item">
+                <img src="{% static 'images/video.jpg' %}" width="550px" height="300px">
+            </div>
+            <div class="sliderbig_item">
+                <img src="{% static 'images/video.jpg' %}" width="550px" height="300px">
+            </div>
+            <div class="sliderbig_item">
+                <img src="{% static 'images/video.jpg' %}" width="550px" height="300px">
+            </div>
+            <div class="sliderbig_item">
+                <img src="{% static 'images/video.jpg' %}" width="550px" height="300px">
+            </div> -->
+            </div>
+
+        <div class="slider">
+            {% for clip in clips_data %}
+            <div class="slider_item">
+                <video width="250px" height="150px" preload="metadata" muted>
+                    <source src="{{ clip.clip_link }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </div>
+            {% endfor %}
+            <!-- <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div>
+            <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div>
+            <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div>
+            <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div>
+            <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div>
+            <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div>
+            <div class="slider_item">
+                <img src="{% static 'images/video.jpg' %}" width="250px" height="150px">
+            </div> -->
+        </div>
+
+         <!----Библиотека---->
+
+
+            <script src="{% static 'js/slick.min.js' %}"></script>
+            <script src="{% static 'js/script.js' %}"></script>
+            <script>
+                $('body').on('click', '.slick-arrow', function () {
+                    document.querySelectorAll('video').forEach(vid => vid.pause());
+                })
+            </script>
+            </div>
+        </div>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="copyright">Copyright ©</div>
+    </div>
+    </footer>
+        </div>
+
+
+
+    </body>
+</html>
+
