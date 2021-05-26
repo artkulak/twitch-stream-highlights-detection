@@ -1,6 +1,7 @@
 # Twitch Stream Highlights Detection with Machine Learning
 This repository contains a web app + server side app for auto highlights generation during a twitch stream live!
 I utilize the power of machine learning to extract features from sound, motion and live chat to predict highlights from video game streams on twitch!
+You can find blog post about the problem [Here](https://artkulakov.medium.com/how-i-created-an-app-for-live-stream-highlight-detection-for-twitch-532f4027987e)
 
 For that I use the combination of the following features:
 
